@@ -1,0 +1,26 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+body{
+    background-color: #191919;
+    color: white;
+}
+
+
+
+label{
+
+    font-size: 1.5em!important;
+}
+
+.btn{
+    
+    font-size: 1.3em;
+}

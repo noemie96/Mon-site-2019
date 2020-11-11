@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html,body{
+    height: 100%;
+}
+
+.slide{
+    min-height: 100%;
+}
+
+.galeries{
+    background-color: #333;
+    color: #DE6B26;
+}
+
+.galeries a{
+    color: #0fffb7;
+}

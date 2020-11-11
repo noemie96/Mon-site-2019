@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container-fluid{
+    padding: 0;
+    height: 100%;
+}
+
+.row{
+    margin: 0;
+}
+
+.slide{
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    padding-left: 100px; /* Décallage dûe à la présence du menu qui fait 100px de large */
+}
+/************ Nav **************/
+#home{
+    background-color: #333333;
+}
+
+nav{
+    width: 100px;
+    height: 100vh;
+    background-color: #222222;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#navLogo{
+    width: 100%;
+    height: 20vh;
+    padding-left: 30px;
+    padding-top: 20px;
+   
+}
+#logo{
+    background-image:url(logo/logo_final.png);
+    width:45px;
+    height:6vh;
+    background-size:cover;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+    animation-name: logo;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    animation-duration: 4s;    
+}
+@keyframes opa{
+    0%{
+        opacity: 0;
+        transform: translate(-50%,-50%) rotateY(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,-50%) rotateY(0deg);
+    }
+}
+
+@keyframes logo{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#navigation{
+    display: block;
+    width: 100%;
+    height: 60vh;
+    padding-left: 30px;
+    border-right: #DE6B26;
+}
+
+#burger{
+    width: 100%;
+    height: 100%;
+    background-color: #0f1316;
+    left: -100%;
+    overflow: hidden;
+}
+
+
+
+a{
+    color:#333333;
+}
+#maison{
+    color: silver;
+}
+#maison:hover{
+    color: #DE6B26;
+}
+#moi{
+    padding-left:5px;
+    padding-top: 35px;
+    color: silver;
+}
+#moi:hover{
+    color: #DE6B26;
+}
+
+#div{
+    
+    padding-top: 35px;
+    color: silver;
+}
+#div:hover{
+    color: #DE6B26;
+}
+#picture{
+    padding-left:5px;
+    padding-top: 35px;
+    color: silver;
+}
+#picture:hover{
+    color: #DE6B26;
+   
+}
+#lettre{
+    padding-left:5px;
+    padding-top: 35px;
+    color: silver;
+}
+#lettre:hover{
+    color: #DE6B26;
+}
+#navFooter{
+    width: 100%;
+    height: 20vh;
+}
+#facebook{
+    padding-left:35px;
+    padding-top: 35px;
+    color: silver;
+}
+#facebook:hover{
+    color: #DE6B26;
+}
+#instagram{
+    padding-left:35px;
+    padding-top: 35px;
+    color: silver;
+}
+#instagram:hover{
+    color: #DE6B26;
+}
+
+#burger{
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+} 
+
+/************ Slide1 **************/
+
+#container-logo{
+    position: absolute;
+    max-width:300px;
+    max-height:400px;
+    top: 40%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -200px; 
+}
+
+#logoaccueil{
+    width: 100%;
+}
+
+#container-design{
+    position: absolute;
+    top: 70%;
+    right: 0;
+    height: 200px;
+}
+
+#titre{
+    position: relative;
+    font-size:70px;
+    color:white;
+    line-height: 100px;
+    font-family: 'Lobster', cursive;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-name: titre;
+}
+
+#ligne{
+    position: absolute;
+    width: 0;
+    height: 5px;
+    line-height: 100px;
+    background-color: white;
+    right:0;
+    line-height: 100px;
+}
+
+/* Maximum largeur tablettes */
+@media (max-width: 991px) { 
+    #titre{
+        text-align: center;
+    }
+    #ligne{
+        display: none;
+    }
+}
+  
+.animligne{
+    animation-name: ligne;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes ligne{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+  }
+
+@keyframes titre{
+    from{opacity: 0;}
+
+    to
+        {opacity: 1};
+}
+/************** Slide2 about et compétences ***************/
+#about{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 991px) { 
+    #about{
+        display: none !important;
+    }
+
+    #about-mini{
+        display: block !important;
+    }
+}
+
+@media (min-width: 992px) {
+    #about-mini{
+        display: none !important;
+    }
+}
+
+#gAbout, #dAbout{
+    width: 50%;
+    overflow: hidden;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+#bAbout-mini, #hAbout-mini{
+    padding-top: 50px; 
+    padding-bottom: 50px;
+}
+
+#gAbout, #bAbout-mini{
+    background-color: #333333;
+}
+
+#dAbout, #hAbout-mini{
+    background-color: #DE6B26;
+}
+
+.openAbout{
+    width: 100%!important;
+}
+
+.closeAbout{
+    width: 0%!important;
+}
+
+#about h4, #about-mini h4{
+    font-size:3em;
+    font-family: 'Lobster', cursive;
+    padding-left: 25px;
+    padding-bottom: 50px;
+}
+
+.gaTxt h4, #bAbout-mini{
+    color:#DE6B26;
+}
+
+.daTxt h4, #hAbout-mini{
+    color: #222222;
+}
+  
+
+.abh4{
+    color:#DE6B26
+}
+.dah4{
+    float: right;
+    position: relative; 
+    right: 2vw;
+}
+#about-mini #containerSKill{
+    margin-left: 25px;
+    width: 100%;
+}
+
+.skill{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #333;
+    box-sizing: border-box;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    margin-top: 5vh;
+}
+
+
+
+h5{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size:25px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+} 
+
+.skillbar{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.skillbar p{
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    padding: 0;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.skillbar p:nth-child(2){
+    float: right;
+    position: relative;
+    top: -30px;
+}
+
+.skill_percentage{
+    background: #262626;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 6px;
+}
+
+.skill_level{
+    background: #0fffb7;
+    width: 0%;
+    height: 10px;
+    border-radius: 6px;
+    transition: all 3s;
+}
+
+span {
+  color: #333333;
+  font-family: "Roboto Slab";
+  text-shadow: 0 1px 0 #c9cfce, 0 2px 0 #bcc2c2, 0 3px 0 #afb6b6, 0 4px 0 #a4adac, 0 5px 0 #9fa8a7, 0 6px 0 #99a3a2, 0 7px 0 #97a1a0, 0 8px 0 #949e9d, 0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2);
+  font-size: 5em;
+  text-align: center;
+  display: block;
+  position: relative;
+  transition: 2s;
+}
+span:after {
+  content: "";
+  height: 1.55rem;
+  width: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  
+}
+
+.active:nth-child(odd) {
+  transform: rotate(4deg);
+}
+.active:nth-child(even) {
+  transform: rotate(-4deg);
+}
+
+#photo{
+    width: 901px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 101;
+    transition: all 1s;
+}
+
+.opacityPhoto{
+    opacity: 0;
+}
+
+.gaTxt,.daTxt{
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0;
+    transition: all 1.5s;
+}
+
+.daTxt{
+    position: relative;
+    top: 15vh;
+}
+
+.atxt{
+    opacity: 1;
+}
+
+/*************** Slide 3 projets ***************/
+#projets {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projet {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    filter: grayscale(1);
+    transition: all 1s;
+    position: relative;
+    cursor: pointer;
+    text-shadow: 1px 1px 5px black;
+}
+
+.projet h2 {
+    color: #DE6B26;
+    position: absolute;
+    font-size: 3vw;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s;
+    text-align: center;
+}
+
+.projet:hover {
+    height:100vh;
+    filter: grayscale(0);
+    box-shadow: 0 0 90px #191919 inset, 0 0 50px #191919 inset;
+}
+
+.projet:hover h2 {
+    opacity: 1;
+}
+
+#illu {
+    background-image: url(upload/bouton_illu.jpg);
+}
+
+#photoshop {
+    background-image: url(upload/photoshop_bouton.jpg);
+}
+
+#Web {
+    background-image: url(upload/bouton_web.jpg);
+}
+
+#animation {
+    background-image: url(upload/anim-bouton.jpg);
+}
+
+#indesign {
+    background-image: url(upload/photography_bouton.jpg);
+}
+
+.containeranimation{
+    text-align:center;
+
+}
+ /*************** Slide 4 contact *****************/
+ #contact{
+     display: flex;
+ }
+ #contg {
+    background-color: #DE6B26;
+    width: 55%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 15px;
+    position: relative;
+    z-index: 1000;
+    
+}
+
+#contg p {
+    font-size: 2em;
+    margin: 30px auto;
+}
+
+#contg p input {
+    font-size: 1em;
+}
+
+#contg p textarea {
+    font-size: 1em;
+    width: 85%;
+    height: 40vh;
+    resize: none;
+}
+
+#contd {
+    width: 45%;
+    /* height: 100vh; */
+    background-image: url(upload/low_poly\ renard.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+label[for=nom] {
+    margin-right: 40px;
+}
+
+/************* Responsive ************/
+@media all and (max-width: 1000px){
+    #gAbout, #dAbout{
+        width: 100%;
+        height: 100vh;
+    
+    }
+
+    #photo{
+        display: none;
+    }
+}
+
+@media all and (min-width:768px){
+    #nav-responsive{
+        display: none;
+    }
+}
+
+@media all and (max-width:767px){
+    nav{
+        display: none;
+    }
+
+    #nav-responsive{
+        display: block;
+    }
+
+    .slide{
+        padding-left: 0;
+    }
+
+    #burger{
+        display: block;
+    }
+
+/*****************slide2***********************/
+span {
+font-size: 2em;
+}
+
+
+
+
+/*****************slide3***********************/
+    #projets{
+        flex-direction: column;
+    }
+
+    .projet{
+        width: 100%;
+    }
+
+    .projet h2{
+        font-size: 3em;
+        opacity: 1;
+    }
+
+/******************slide contact***************************/
+    #contact{
+        flex-direction: column;
+    
+    }
+
+    #contd{
+        width: 100%;
+        height: 30vh;
+        order: 1;
+       
+    }
+
+    #contg{
+        width: 100%;
+        order: 2;
+        text-align: center;
+        padding: 50px 0 0 0;
+    }
+
+    #contg p input{
+        width: 80%;
+      
+    }
+
+    label{
+        display: block;
+    }
+
+}
+
+#nav-responsive{
+    height: 100%;
+    position: fixed;
+    z-index: 1500;
+    width: 0;    
+}
+
+#logo-responsive{
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 60px;
+    width: 50px;
+    z-index: 2000;
+    margin: 15px;
+}
+
+#logo-responsive:hover{
+    cursor: pointer;
+}
+
+#mymenu{
+    width: 100%;
+    height: 100%;
+    background-color: #DE6B26;
+    left: -100%;
+    overflow: hidden;
+    text-align:center;
+    font-size:25px;
+    font-family: 'Lobster', cursive;
+    
+}
+
+#mymenu ul{
+    list-style:none;
+    position: relative; 
+    top: 20vh;
+}
+
+#mymenu ul li{
+    margin-top: 5vh;
+}
+
+#facebook-responsive{
+    color:black;
+}
+#facebook-responsive:hover{
+    color:black;
+}
+#instagram-responsive:hover{
+    color:black;
+}
+#instagram-responsive{
+    color:black;
+}
